@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "OCR 英文學習",
+  "version": "1.0.0",
+  "description": "框選截圖擷取英文單字，自動翻譯並儲存單字卡片",
+  "permissions": ["storage", "activeTab", "scripting", "contextMenus"],
+  "host_permissions": ["https://vision.googleapis.com/*", "https://generativelanguage.googleapis.com/*"],
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "src/options/index.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "activate-ocr": {
+      "suggested_key": {
+        "default": "Alt+Q"
+      },
+      "description": "啟用 OCR 截取模式"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*", "src/wordlist/index.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+
