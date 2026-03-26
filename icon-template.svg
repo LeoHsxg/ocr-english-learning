@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Book -->
+  <path d="M 20 12 L 20 116 Q 20 120 24 120 L 100 120 Q 104 120 104 116 L 104 12 Q 104 8 100 8 L 24 8 Q 20 8 20 12 Z"/>
+  <!-- Book spine -->
+  <path d="M 24 8 L 24 120"/>
+  <!-- Pages -->
+  <path d="M 42 30 L 90 30"/>
+  <path d="M 42 50 L 90 50"/>
+  <path d="M 42 70 L 90 70"/>
+  <path d="M 42 90 L 75 90"/>
+  <!-- Eye overlay (left) -->
+  <g transform="translate(-8, 0)">
+    <circle cx="50" cy="35" r="14" fill="none"/>
+    <circle cx="50" cy="35" r="6" fill="none"/>
+  </g>
+</svg>

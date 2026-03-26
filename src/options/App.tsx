@@ -28,9 +28,9 @@ function App() {
 
   const toggleTheme = async () => {
     const next = theme === "dark" ? "light" : "dark";
-    await setTheme(next);
-    setThemeState(next);
     applyTheme(next);
+    setThemeState(next);
+    await setTheme(next);
   };
 
   const handleSave = async () => {

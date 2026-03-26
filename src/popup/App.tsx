@@ -21,9 +21,9 @@ function App() {
   const toggleTheme = async () => {
     if (!data) return
     const next = data.theme === 'dark' ? 'light' : 'dark'
-    await setTheme(next)
-    setData({ ...data, theme: next })
     applyTheme(next)
+    setData({ ...data, theme: next })
+    await setTheme(next)
   }
 
   const openWordlist = () => {
